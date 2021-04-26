@@ -1,0 +1,196 @@
+@import url("https://fonts.googleapis.com/css?family=Gelasio&display=swap");
+
+* { box-sizing: border-box; }
+
+@supports (-webkit-text-stroke: 1px black) {
+  .stroke {
+     text-transform: capitalize;
+    font-size: 100px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: transparent;
+  }
+}
+body,
+html { overflow-x: hidden; }
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding: 25px 0;
+overflow-x: hidden; 
+  background-color: white;
+  
+
+  font-family: Gelasio;
+  font-size: 60px;
+}
+
+.bar_content {
+ text-transform: uppercase;
+  display: block; /* Important to give the content a width */
+ white-space: nowrap;
+  width: 100%;
+  transform: translateX(100%); /* Animation start out of the screen */
+
+  /* Add the animation */
+  animation: move 20s linear infinite /* infinite make reapeat the animation indefinitely */;
+}
+
+.stroke {
+    overflow: hidden;
+    text-transform: capitalize;
+    font-size: 150px;
+    -webkit-text-stroke: 1px black;
+    -webkit-text-fill-color: transparent;
+    white-space: nowrap;
+ 
+}
+
+.bar_contentLeft {
+ text-transform: uppercase;
+  display: block; /* Important to give the content a width */
+ white-space: nowrap;
+  width: 100%;
+  transform: translateX(-100%); /* Animation start out of the screen */
+
+  /* Add the animation */
+  animation: left 20s linear infinite /* infinite make reapeat the animation indefinitely */;
+}
+
+
+.slideUp{
+ animation: 2s slide-right 3s forwards;
+    transform:translateY(100%);
+    animation-fill-mode: forwards;
+}
+/* Create the animation */
+@keyframes move {
+  to { transform: translateX(-100%); }
+}
+
+@keyframes left {
+  to { transform: translateX(100%); }
+}
+
+@keyframes slide-right {
+ 0% {
+    transform:translateY(0);
+  }
+    1% {
+    transform:translateY(0);
+  }
+
+    19% {
+    transform:translateY(0);
+  }
+    20% {
+    transform:translateY(0);
+  }
+
+    39% {
+    transform:translateY(0);
+  }
+    40% {
+    transform:translateY(0);
+  }
+
+    59% {
+    transform:translateY(0);
+  }
+    60% {
+    transform:translateY(0);
+  }
+
+    79% {
+    transform:translateY(0);
+  }
+    80% {
+    transform:translateY(0);
+  }
+
+    100% {
+    transform:translateY(0);
+  }
+  
+}
+
+@keyframes slide-out {
+    0% {
+        opacity: 0%;
+    }
+    1% {
+        opacity: 100%;
+    }
+
+    19% {
+        opacity: 100%;
+    }
+    20% {
+        opacity: 0%;
+    }
+
+    39% {
+        opacity: 0%;
+    }
+    40% {
+        opacity: 100%;
+    }
+
+    59% {
+        opacity: 100%;
+    }
+    60% {
+        opacity: 0%;
+    }
+
+    79% {
+        opacity: 0%;
+    }
+    80% {
+        opacity: 100%;
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes slide-out-container {
+    0% {
+        height: 100vh;
+    }
+
+    40% {
+        height: 100vh;
+    }
+
+    100% {
+        height: 0%;
+    }
+}
+
+
+========================================================================
+HTML
+ <div class="bar">
+   <span class="bar_content">
+  <span class="slideUp">Lorem</span>  <span class="slideUp">Ipsum</span>  <span class="slideUp">is</span>  <span class="slideUp">simply</span>  <span class="slideUp">dummy</span>  <span class="slideUp">text.</span>Lorem Ipsum <span class="stroke">dummy dummy dummy sexy text
+   </span>
+ </div>
+  
+<span class="bar_contentLeft">
+      <span class="stroke"> Lorem Ipsum is simply dummy text.</span>Lorem Ipsum <span class="stroke">dummy dummy dummy sexy text
+   </span>
+ </div>r
+<span class="bar_contentLeft">
+       Lorem Ipsum is simply dummy text.</span>Lorem Ipsum <span class="stroke">dummy dummy dummy sexy text
+   </span>
+ </div>
+
+<span class="bar_content">
+      <span class="stroke"> Lorem Ipsum is simply</span> dummy text.Lorem Ipsum <span class="stroke">dummy dummy dummy sexy text
+   </span>
+ </div>
